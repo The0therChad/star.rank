@@ -7,3 +7,4 @@
 #RStudio files
 .Rproj.user
 .Rproj.user/
+inst/doc
