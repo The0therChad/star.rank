@@ -1,0 +1,83 @@
+---
+title: "ProjectNotebookData534"
+author: "Monica Penner"
+date: "2/15/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Table of Contents
+
+### A) Timeline of Monica Specific Work
+#### Jan 20 (backfilled)
+#### Jan 20-Feb 15 (backfilled)
+#### Feb 14 (backfilled)
+#### Feb 15
+#### Feb 
+
+### B) Communication Events
+
+### C) Major Decision Points
+
+***********************************************************************
+
+## A) Timeline of Monica Specific Work (C when complete)
+### 1) February 15, 2022
+- notebook creation (C)
+- backfill previous work info (C)
+- project confirmation emails (C)
+- Code of Conduct documentation 
+- Contributions documentation 
+
+### 2) January 20, 2022
+- (backfilled info)
+- review project criteria
+- discuss possible API choices
+- discuss individual strengths and weaknesses
+- start work allocation
+
+### 3) January 20 to February 14, 2022
+- review possible APIs (C)
+- review various API wrappers (C)
+
+### 4) February 14, 2022
+- review Travis CI processes (C)
+- review StarWars API (C)
+
+### 5) February 15, 2022 
+- create personal project log
+- create Code of Conduct
+- create CONTRIBUTIONS
+- create gannt contribution/timeline
+
+### 5) February 16, 2022 
+- outline function options
+
+
+
+
+
+
+## B) Communication Events
+-Date - medium: (primary person) topic
+
+- Jan 20 - slack: group set up, introductions
+- Jan 20 - dinner: API options, individual strengths
+- Feb 13 - slack: (Roger) Star Wars API proposal
+- Feb 14 - classroom: nightly task assignment: Roger function building, Chad folder set up, Monica Travis CI enquiry
+- Feb 14 - slack: (Roger) python function presentation
+- Feb 15 - classroom: (Chad) repo launch
+- Feb 15 - email: (Monica) API approval request to Dr Lucet
+- Feb 15 - zoom: discussion and decision to proceed with Star Wars API, decision to focus wrapper on Ranking (AKA Rancor), nightly task assignment: Roger function modification, Chad proj framework/folder completion, Monica Code of Conduct, Contributions documentation
+-
+
+
+## C) Major Decision Points
+- Jan 20: Partner Selection
+- Feb 14: Star Wars API
+- Feb 15: Continue Star Wars API
+
+
