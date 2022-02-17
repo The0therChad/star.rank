@@ -3,24 +3,19 @@
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET
+#' @import ggplot2
+#' @import dplyr
 #'
 #' @return
 #' @export
 #'
-#' @import ggplot2
-#' @import dplyr
-
 #' @examples
 
-rank_planets <- function(format = NULL) {
+rank_planets <- function(format = NULL, interested) {
   url <- "https://swapi.dev/api/planets/"
   args <- list(format = format)
-  # Check for internet
-  check_internet()
   # Call the API
   res <- GET(url, query = compact(args))
-  # Check the result
-  check_status(res)
   # Store content of response
   cont <- httr::content(res, as = "text", encoding = "UTF-8")
   # Return content as a dataframe
@@ -33,8 +28,17 @@ rank_planets <- function(format = NULL) {
     resHead <- fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  resDF
-}
 
-rank_planets()
+  #trim and sort dataframe for plotting
+  resDF <- resDF[c('name', 'rotation_period', 'orbital_period', 'diameter', 'population')]
+  resDF[, c(2:5)] <- sapply(resDF[, c(2:5)], as.numeric)
+  resDF <- resDF[complete.cases(resDF), ] %>%
+    arrange(-!!sym(interested))
+  resDF
+
+  #plot output for requested attribute
+
+
+
+}
 
