@@ -3,7 +3,7 @@
 #' @importFrom attempt stop_if_all
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
-#' @import httr GET
+#' @importFrom httr GET
 #'
 #' @return
 #' @export
