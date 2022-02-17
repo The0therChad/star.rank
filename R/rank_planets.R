@@ -7,6 +7,9 @@
 #' @return
 #' @export
 #'
+#' @import ggplot2
+#' @import dplyr
+
 #' @examples
 
 rank_planets <- function(format = NULL) {
@@ -32,4 +35,6 @@ rank_planets <- function(format = NULL) {
   }
   resDF
 }
+
+rank_planets()
 
