@@ -13,3 +13,9 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Imports: 
+    attempt,
+    curl,
+    httr,
+    jsonlite,
+    purrr
