@@ -1,6 +1,5 @@
 #' Rank Vehicles by specified metric
 #'
-#' @importFrom attempt stop_if_all
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET
