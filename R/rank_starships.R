@@ -3,13 +3,15 @@
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET
+#' @import ggplot2
+#' @import dplyr
 #'
 #' @return
 #' @export
 #'
 #' @examples
 
-rank_starships <- function(format = NULL) {
+rank_starships <- function(format = NULL, sort_on = NULL) {
   url <- "https://swapi.dev/api/starships/"
   args <- list(format = format)
   # Check for internet
@@ -30,5 +32,15 @@ rank_starships <- function(format = NULL) {
     resHead <- fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
+  resDF <- resDF %>%
+    as_tibble(resDF) %>%
+    select(name, length) %>%
+    mutate(length = as.numeric(length))
+
   resDF
+  ggplot(resDF) +
+    aes(x = name,
+        y = length) +
+    geom_col()
+  ggsave("rank_plot.png", width = 20, height = 10)
 }

@@ -4,9 +4,9 @@
 \alias{rank_starships}
 \title{Rank Starships by specified metric}
 \usage{
-rank_starships(format = NULL)
+rank_starships(format = NULL, sort_on = NULL)
 
-rank_starships(format = NULL)
+rank_starships(format = NULL, sort_on = NULL)
 }
 \value{
 
