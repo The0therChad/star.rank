@@ -3,8 +3,10 @@
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr GET
+#' @importFrom stats reorder
 #' @import ggplot2
 #' @import dplyr
+#' @import tidyr
 #'
 #' @return
 #' @export
@@ -34,13 +36,19 @@ rank_starships <- function(format = NULL, sort_on = NULL) {
   }
   resDF <- resDF %>%
     as_tibble(resDF) %>%
-    select(name, length) %>%
-    mutate(length = as.numeric(length))
+    mutate(cost_in_credits = as.numeric(cost_in_credits),
+           length = as.numeric(length),
+           max_atmosphering_speed = as.numeric(max_atmosphering_speed),
+           crew = as.numeric(crew),
+           passengers = as.numeric(passengers),
+           cargo_capacity = as.numeric(cargo_capacity)) %>%
+    suppressWarnings() %>%
+    tidyr::replace_na(list(0))
 
-  resDF
   ggplot(resDF) +
-    aes(x = name,
-        y = length) +
-    geom_col()
-  ggsave("rank_plot.png", width = 20, height = 10)
+    aes(x = reorder(name, -!!sym(sort_on)),
+        y = !!sym(sort_on)) +
+    geom_col() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  suppressWarnings(ggsave("rank_plot.png", width = 20, height = 10))
 }
