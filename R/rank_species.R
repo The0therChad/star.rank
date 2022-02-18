@@ -1,4 +1,4 @@
-#' Rank Starships by specified metric
+#' Rank Species by specified metric
 #'
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
@@ -6,7 +6,6 @@
 #'
 #' @return
 #' @export
-#'#' Rank Planets by quantitative metric (rotation_period, orbital_period, diameter, population)
 #'
 #' @importFrom purrr compact
 #' @importFrom jsonlite fromJSON
@@ -38,8 +37,8 @@ rank_species <- function(format = NULL, interested) {
   }
 
   #trim and sort dataframe for plotting
-  resDF <- resDF[c('name', 'rotation_period', 'orbital_period', 'diameter', 'population')]
-  resDF[, c(2:5)] <- sapply(resDF[, c(2:5)], as.numeric)
+  resDF <- resDF[c('name', 'average_height', 'average_lifespan', 'eye_colors', 'language')]
+  resDF[, c(2:3)] <- sapply(resDF[, c(2:3)], as.numeric)
   resDF <- resDF[complete.cases(resDF), ] %>%
     arrange(-!!sym(interested))
   resDF <- head(resDF, 10)
