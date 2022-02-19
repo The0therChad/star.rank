@@ -37,20 +37,36 @@ rank_species <- function(format = NULL, interested) {
   }
 
   #trim and sort dataframe for plotting
-  resDF <- resDF[c('name', 'average_height', 'average_lifespan', 'eye_colors', 'language')]
+  resDF <- resDF[c('name', 'average_height', 'average_lifespan')]
   resDF[, c(2:3)] <- sapply(resDF[, c(2:3)], as.numeric)
   resDF <- resDF[complete.cases(resDF), ] %>%
     arrange(-!!sym(interested))
-  resDF <- head(resDF, 10)
+  resDF <- head(resDF, 15)
   resDF
 
-  #plot output for requested attribute
-  planetplot <- ggplot(data=resDF, aes(x=name, y=!!sym(interested))) +
-    geom_bar(stat="identity") +
-    coord_flip()
-  planetplot
+  #plot output for average_height
+  if (!!sym(interested) == "average_height"){
+    speciesplot1 <- ggplot(data=resDF,
+                          aes(x=reorder(name, -!!sym(interested)),
+                              y=!!sym(interested))) +
+      geom_bar(stat="identity") +
+      coord_flip() +
+      xlab("Species") +
+      ylab("Average height in cm")
+    speciesplot1
+  }
 
-
+  #plot output for average_lifespan
+#  if (!!sym(interested) == "average_lifespan"){
+    speciesplot2 <- ggplot(data=resDF,
+                          aes(x=reorder(name, -!!sym(interested)),
+                              y=!!sym(interested))) +
+      geom_bar(stat="identity") +
+      coord_flip() +
+      xlab("Species") +
+      ylab("Average lifespan in years")
+    speciesplot2
+#  }
 
 }
 
