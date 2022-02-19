@@ -50,7 +50,7 @@ rank_planets <- function(interested) {
 
   #plot output for requested attribute
   planetPlot <- ggplot(data = resDF,
-                       aes(x = reorder(name,-!!sym(interested)),
+                       aes(x = stats::reorder(name,-!!sym(interested)),
                            y = !!sym(interested))) +
     geom_bar(stat = "identity") +
     xlab("Planet Name") +
