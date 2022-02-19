@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples \dontrun{rank_starships(interested = "crew"),
-#' rank_starships(interesetd = "max_atmosphering_speed")}
+#' rank_starships(interested = "max_atmosphering_speed")}
 
 rank_starships <- function(interested = NULL) {
   url <- "https://swapi.dev/api/starships/"
