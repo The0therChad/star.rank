@@ -16,6 +16,7 @@ VignetteBuilder: knitr
 Imports: 
     attempt,
     curl,
+    dplyr,
+    ggplot2,
     httr,
-    jsonlite,
-    purrr
+    jsonlite
