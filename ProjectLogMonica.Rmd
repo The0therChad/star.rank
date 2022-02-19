@@ -16,7 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Jan 20-Feb 15 (backfilled)
 #### Feb 14 (backfilled)
 #### Feb 15
-#### Feb 
+#### Feb 16
+#### Feb 17
+#### Feb 19
+#### Feb 20
 
 ### B) Communication Events
 
@@ -55,10 +58,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### 5) February 16, 2022 
 - outline function options
+- first attempt species function
 
+### 6) February 17, 2022
+- except/test code background work
 
+### 7) February 18, 2022 (backfill)
+- error work
+- attempt test code
 
-
+### 8) February 19, 2022
+- review and pull Chad's work
+- 
+- start README edits
 
 
 ## B) Communication Events
@@ -72,12 +84,19 @@ knitr::opts_chunk$set(echo = TRUE)
 - Feb 15 - classroom: (Chad) repo launch
 - Feb 15 - email: (Monica) API approval request to Dr Lucet
 - Feb 15 - zoom: discussion and decision to proceed with Star Wars API, decision to focus wrapper on Ranking (AKA Rancor), nightly task assignment: Roger function modification, Chad proj framework/folder completion, Monica Code of Conduct, Contributions documentation
--
+- Feb 16 -
+- Feb 17 -
+- Feb 18 - 
+- Feb 19 -
+- Feb 20 - 
 
 
 ## C) Major Decision Points
 - Jan 20: Partner Selection
 - Feb 14: Star Wars API
-- Feb 15: Continue Star Wars API
+- Feb 15: Continue with Star Wars API
+- Feb 17: Use plot code developed by Roger
+- Feb 18: Use improved function code developed by Chad
+- Feb 19: 
 
 
