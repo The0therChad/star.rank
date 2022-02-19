@@ -34,12 +34,16 @@ rank_planets <- function(format = NULL, interested) {
   resDF[, c(2:5)] <- sapply(resDF[, c(2:5)], as.numeric)
   resDF <- resDF[complete.cases(resDF), ] %>%
     arrange(-!!sym(interested))
-  resDF <- head(resDF, 10)
+  resDF <- head(resDF, 20)
   resDF
 
   #plot output for requested attribute
-  planetplot <- ggplot(data=resDF, aes(x=name, y=!!sym(interested))) +
+  planetplot <- ggplot(data=resDF,
+                       aes(x=reorder(name, -!!sym(interested)),
+                           y=!!sym(interested))) +
     geom_bar(stat="identity") +
+    xlab("Planet Name") +
+#    ylim(0,30000) +
     coord_flip()
   planetplot
 
