@@ -51,26 +51,28 @@ knitr::opts_chunk$set(echo = TRUE)
 - review StarWars API (C)
 
 ### 5) February 15, 2022 
-- create personal project log
+- create personal project log https://github.com/The0therChad/star.rank/commit/ee91f8753ba0deebf979ffc8a04214c1ed2ce259
 - create Code of Conduct
-- create CONTRIBUTIONS
+- create CONTRIBUTIONS https://github.com/The0therChad/star.rank/commit/ca80830d8cb209f19a350f5faeea1aa1d6d95c31
 - create gannt contribution/timeline
 
 ### 5) February 16, 2022 
 - outline function options
-- first attempt species function
+- first attempt species function https://github.com/The0therChad/star.rank/commit/20fce8f43e1c296855dff43a68ef82a98a02f2c1
 
 ### 6) February 17, 2022
 - except/test code background work
+- modify species code https://github.com/The0therChad/star.rank/commit/c0d52620f276e02d226febf4d292d568aabbd364
 
 ### 7) February 18, 2022 (backfill)
 - error work
 - attempt test code
 
 ### 8) February 19, 2022
-- review and pull Chad's work
+- review and pull Chad's work https://github.com/The0therChad/star.rank/commit/8b9389b7566397ed1af50f6f41c5ba8b1b043a8b
 - update species https://github.com/The0therChad/star.rank/commit/5de0542f8524523365d54a924eeed85da09707cd
 - start README edits
+- log update https://github.com/The0therChad/star.rank/commit/7d09c92d8c18c3efddf704f6d88df8809245b8d8
 
 
 ## B) Communication Events
