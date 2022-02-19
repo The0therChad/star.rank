@@ -1,0 +1,43 @@
+---
+title: "ProjectLogChad"
+author: "Chad Wheeler"
+date: "19/02/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Day 1 - Feb. 14
+
+Created package skeleton including vignette files. 
+Final commit of day - https://github.com/The0therChad/star.rank/tree/5487dd7a0578a8741b6e19e2f510f14f132d19b7
+
+## Day 2 - Feb. 15
+
+Added github actions workflows, fixed license files.
+Final commit of day - 
+https://github.com/The0therChad/star.rank/tree/ce17685d2615e6c1b9b4e52d6479df96c9d00d40
+
+## Day 3 - Feb. 16
+
+Made function to call API successfully with checks for internet and proper connection. Started to try plotting with dataframe returned from API.
+Final commit of day - 
+https://github.com/The0therChad/star.rank/tree/dbea8b395e313aa5fa118dac19f1308efdae632e
+
+## Day 4 - Feb. 17
+
+Got function to output a basic plot from API dataframe.
+Final commit of day - 
+https://github.com/The0therChad/star.rank/tree/cbfa65ffa1413495793e2a4a535cd58c84bfbdcb
+
+## Day 5 - Feb. 18
+
+Changed dataframe sorting to match other functions.
+Final commit of day -
+https://github.com/The0therChad/star.rank/tree/70605b95eb1dac877b81c21e4b21a83a6eb84180
+
+## Day 6 - Feb. 19
+
+Work on merging all functions to main, fixing up documentation.
