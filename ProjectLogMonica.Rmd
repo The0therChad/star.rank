@@ -69,7 +69,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### 8) February 19, 2022
 - review and pull Chad's work
-- 
+- update species https://github.com/The0therChad/star.rank/commit/5de0542f8524523365d54a924eeed85da09707cd
 - start README edits
 
 
