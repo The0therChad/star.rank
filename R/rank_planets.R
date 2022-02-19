@@ -1,53 +1,61 @@
 #' Rank Planets by quantitative metric (rotation_period, orbital_period, diameter, population)
 #'
-#' @importFrom purrr compact
-#' @importFrom jsonlite fromJSON
-#' @importFrom httr GET
-#' @import ggplot2
-#' @import dplyr
+#' Returns a plot showing the top 15 Star Wars planets
+#' sorted by a specified metric with planet name on the y-axis,
+#' and the ranking metric on the x-axis.
 #'
-#' @return
+#' @param interested Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population")
+#'
+#' @import ggplot2
+#' @importFrom utils head
+#'
+#' @return A ggplot with planet name on  the y-axis and the ranking metric on the x-axis.
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{rank_planets(interested = "rotation_period"),
+#' rank_planets(interested = "population")}
 
-rank_planets <- function(format = NULL, interested) {
+rank_planets <- function(interested) {
   url <- "https://swapi.dev/api/planets/"
-  args <- list(format = format)
+  # Check for internet
+  check_internet()
   # Call the API
-  res <- GET(url, query = compact(args))
+  res <- httr::GET(url)
+  # Check the result
+  check_status(res)
   # Store content of response
   cont <- httr::content(res, as = "text", encoding = "UTF-8")
   # Return content as a dataframe
-  resHead <- fromJSON(cont)
+  resHead <- jsonlite::fromJSON(cont)
   resDF <- resHead$results
   # Get each page of data and append to first page
   while (!is.null(resHead$`next`)) {
-    res <- GET(resHead$`next`, query = compact(args))
+    res <- httr::GET(resHead$`next`)
     cont <- httr::content(res, as = "text", encoding = "UTF-8")
-    resHead <- fromJSON(cont)
+    resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
 
   #trim and sort dataframe for plotting
-  resDF <- resDF[c('name', 'rotation_period', 'orbital_period', 'diameter', 'population')]
-  resDF[, c(2:5)] <- sapply(resDF[, c(2:5)], as.numeric)
-  resDF <- resDF[complete.cases(resDF), ] %>%
-    arrange(-!!sym(interested))
-  resDF <- head(resDF, 20)
-  resDF
+  resDF <-
+    resDF[c('name',
+            'rotation_period',
+            'orbital_period',
+            'diameter',
+            'population')]
+  resDF[, 2:5] <- suppressWarnings(sapply(resDF[, 2:5], function(x) as.numeric(gsub(",", "", x))))
+  resDF <- resDF %>%
+    dplyr::arrange(-!!sym(interested)) %>%
+    head(15)
 
   #plot output for requested attribute
-  planetplot <- ggplot(data=resDF,
-                       aes(x=reorder(name, -!!sym(interested)),
-                           y=!!sym(interested))) +
-    geom_bar(stat="identity") +
+  planetPlot <- ggplot(data = resDF,
+                       aes(x = reorder(name,-!!sym(interested)),
+                           y = !!sym(interested))) +
+    geom_bar(stat = "identity") +
     xlab("Planet Name") +
-#    ylim(0,30000) +
-    coord_flip()
-  planetplot
-
-
-
+    #    ylim(0,30000) +
+    coord_flip() +
+    xlab("Planet")
+  planetPlot
 }
-
