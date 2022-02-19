@@ -41,23 +41,12 @@ rank_species <- function(format = NULL, interested) {
   resDF[, c(2:3)] <- sapply(resDF[, c(2:3)], as.numeric)
   resDF <- resDF[complete.cases(resDF), ] %>%
     arrange(-!!sym(interested))
-  resDF <- head(resDF, 15)
+  resDF <- head(resDF, 20)
   resDF
 
-  #plot output for average_height
-  if (!!sym(interested) == "average_height"){
-    speciesplot1 <- ggplot(data=resDF,
-                          aes(x=reorder(name, -!!sym(interested)),
-                              y=!!sym(interested))) +
-      geom_bar(stat="identity") +
-      coord_flip() +
-      xlab("Species") +
-      ylab("Average height in cm")
-    speciesplot1
-  }
+  #plot output for average_lifespan or average_height
 
-  #plot output for average_lifespan
-#  if (!!sym(interested) == "average_lifespan"){
+  if (interested == "average_lifespan"){
     speciesplot2 <- ggplot(data=resDF,
                           aes(x=reorder(name, -!!sym(interested)),
                               y=!!sym(interested))) +
@@ -66,7 +55,18 @@ rank_species <- function(format = NULL, interested) {
       xlab("Species") +
       ylab("Average lifespan in years")
     speciesplot2
-#  }
+
+  } else {
+
+    speciesplot1 <- ggplot(data=resDF,
+                           aes(x=reorder(name, -!!sym(interested)),
+                               y=!!sym(interested))) +
+      geom_bar(stat="identity") +
+      coord_flip() +
+      xlab("Species") +
+      ylab("Average height in cm")
+    speciesplot1
+  }
 
 }
 
