@@ -20,5 +20,6 @@ Imports:
     dplyr,
     ggplot2,
     httr,
-    jsonlite
+    jsonlite,
+    magrittr
 Config/testthat/edition: 3
