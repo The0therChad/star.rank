@@ -1,0 +1,41 @@
+---
+title: "CONTRIBUTIONS"
+author: "Monica Penner"
+date: "2/16/2022"
+output: html_document
+---
+
+### Summary of Contributions
+
+## Contribution Inventory and Timeline
+
+- Please refer to the [Rancor Gannt Chart](link to excel file) for the detailed contribution inventory and timeline 
+
+### Roger's Strengths
+
+- Code creation driver
+- Equal creative contributor 
+
+### Chad's Strengths
+
+- Software and technical expertice
+- Equal creative contributor
+
+
+### Monica's Role
+
+- Documentation and Process flow
+- Equal creative contributor
+
+## Things that went well
+
+- excellent adherence to the RoChMo Code of Conduct
+- 
+
+## Challenges Encountered -> adjustments made
+
+- Delay in confirming API -> timeline re-adjusted and condensed (All)
+- Star Wars API wrapper already developed -> elevate and focus functionality of wrapper (All)
+- Jupyter lab /GitHub conflict -> switch to Rstudio (Chad)
+- expired Travis CI free trial -> switch to GitHub integration system (Chad)
+
