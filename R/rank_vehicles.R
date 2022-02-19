@@ -1,22 +1,22 @@
-#' Rank Starships by specified metric
+#' Rank Vehicles by specified metric
 #'
-#' Returns a plot showing the top 15 Star Wars starships
-#' sorted by a specified metric with starship name on the y-axis,
+#' Returns a plot showing the top 15 Star Wars vehicles
+#' sorted by a specified metric with vehicle name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
-#' @param interested Metric to rank starships on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")
+#' @param interested Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")
 #'
 #' @import ggplot2
 #' @importFrom utils head
 #'
-#' @return A plot with starship name on the y-axis and the ranking metric on  the x-axis.
+#' @return A plot with vehicle name on the y-axis and the ranking metric on  the x-axis.
 #' @export
 #'
-#' @examples \dontrun{rank_starships(interested = "crew"),
-#' rank_starships(interested = "max_atmosphering_speed")}
+#' @examples \dontrun{rank_vehicles(interested = "length"),
+#' rank_vehicles(interested = "passengers")}
 
-rank_starships <- function(interested = NULL) {
-  url <- "https://swapi.dev/api/starships/"
+rank_vehicles <- function(interested = NULL) {
+  url <- "https://swapi.dev/api/vehicles/"
   # Check for internet
   check_internet()
   # Call the API
@@ -54,10 +54,10 @@ rank_starships <- function(interested = NULL) {
     head(15)
 
   # Plot results
-  starshipsPlot <-
+  vehiclesPlot <-
     ggplot(resDF, aes(x = stats::reorder(name, -!!sym(interested)), y = !!sym(interested))) +
     geom_bar(stat = "identity") +
     coord_flip() +
-    xlab("Starship")
-  starshipsPlot
+    xlab("Vehicle")
+  vehiclesPlot
 }

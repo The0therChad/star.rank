@@ -19,6 +19,4 @@ Imports:
     dplyr,
     ggplot2,
     httr,
-    jsonlite,
-    purrr,
-    tidyr
+    jsonlite
