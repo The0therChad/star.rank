@@ -2,15 +2,22 @@
 % Please edit documentation in R/rank_people.R
 \name{rank_people}
 \alias{rank_people}
-\title{Rank People by specified metric}
+\title{Rank Peoples by specified metric}
 \usage{
-rank_people(format = NULL, interested)
+rank_people(interested = NULL)
+}
+\arguments{
+\item{interested}{Metric to rank people on. ("height", "mass")}
 }
 \value{
-
-
-
+A plot with people name on the y-axis and the ranking metric on the x-axis.
 }
 \description{
-Rank People by specified metric
+Returns a plot showing the top 15 Star Wars people
+sorted by a specified metric with the person's name on the y-axis,
+and the ranking metric on the x-axis.
+}
+\examples{
+\dontrun{rank_people(interested = "height"),
+rank_people(interested = "mass")}
 }

@@ -1,56 +1,59 @@
-#' Rank People by specified metric
+#' Rank Peoples by specified metric
 #'
-#' @importFrom purrr compact
-#' @importFrom jsonlite fromJSON
-#' @importFrom httr GET
+#' Returns a plot showing the top 15 Star Wars people
+#' sorted by a specified metric with the person's name on the y-axis,
+#' and the ranking metric on the x-axis.
 #'
-#' @return
-#' @export
+#' @param interested Metric to rank people on. ("height", "mass")
 #'
-#' @importFrom purrr compact
-#' @importFrom jsonlite fromJSON
-#' @importFrom httr GET
 #' @import ggplot2
-#' @import dplyr
+#' @importFrom utils head
 #'
-#' @return
+#' @return A plot with people name on the y-axis and the ranking metric on the x-axis.
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{rank_people(interested = "height"),
+#' rank_people(interested = "mass")}
 
-rank_people <- function(format = NULL, interested) {
+rank_people <- function(interested = NULL) {
   url <- "https://swapi.dev/api/people/"
-  args <- list(format = format)
+  # Check for internet
+  check_internet()
   # Call the API
-  res <- GET(url, query = compact(args))
+  res <- httr::GET(url)
+  # Check the result
+  check_status(res)
   # Store content of response
   cont <- httr::content(res, as = "text", encoding = "UTF-8")
   # Return content as a dataframe
-  resHead <- fromJSON(cont)
+  resHead <- jsonlite::fromJSON(cont)
   resDF <- resHead$results
   # Get each page of data and append to first page
   while (!is.null(resHead$`next`)) {
-    res <- GET(resHead$`next`, query = compact(args))
+    res <- httr::GET(resHead$`next`)
     cont <- httr::content(res, as = "text", encoding = "UTF-8")
-    resHead <- fromJSON(cont)
+    resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
+  # Only use 'name' and numeric columns
+  resDF <-
+    resDF[c(
+      'name',
+      'height',
+      'mass'
+    )]
+  # Strip commas and change all values to numbers for plotting
+  resDF[, 2:3] <- suppressWarnings(sapply(resDF[, 2:3], function(x) as.numeric(gsub(",", "", x))))
+  # Sort DF by specified metric and use only top 15 values
+  resDF <- resDF %>%
+    dplyr::arrange(-!!sym(interested)) %>%
+    head(15)
 
-  #trim and sort dataframe for plotting
-  resDF <- resDF[c('name', 'height', 'mass')]
-  resDF[, c(2:3)] <- sapply(resDF[, c(2:3)], as.numeric)
-  resDF <- resDF[complete.cases(resDF), ]
-  resDF <- head(resDF, 20)
-  resDF
-
-  #plot output for height or mass
-
-  peopleplot <- ggplot(data=resDF,
-                       aes(x=reorder(name, -!!sym(interested)),
-                           y=!!sym(interested))) +
-    geom_bar(stat="identity") +
+  # Plot results
+  peoplePlot <-
+    ggplot(resDF, aes(x = stats::reorder(name, -!!sym(interested)), y = !!sym(interested))) +
+    geom_bar(stat = "identity") +
     coord_flip() +
-    xlab("People")
-  peopleplot
-
+    xlab("Person")
+  peoplePlot
 }
