@@ -18,6 +18,7 @@ Imports:
     attempt,
     curl,
     dplyr,
+    magrittr,
     ggplot2,
     httr,
     jsonlite,

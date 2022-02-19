@@ -1,10 +1,11 @@
 #' Rank Starships by specified metric
 #'
-#' Returns a plot showing the top 15 Star Wars starships
+#' Returns a plot showing the top "n" number of Star Wars starships
 #' sorted by a specified metric with starship name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
 #' @param interested Metric to rank starships on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")
+#' @param n Number of results to plot. (default = 15)
 #'
 #' @import ggplot2
 #' @importFrom utils head
@@ -15,7 +16,7 @@
 #' @examples \dontrun{rank_starships(interested = "crew"),
 #' rank_starships(interested = "max_atmosphering_speed")}
 
-rank_starships <- function(interested = NULL) {
+rank_starships <- function(interested = NULL, n = 15) {
   url <- "https://swapi.dev/api/starships/"
   # Check for internet
   check_internet()
@@ -51,7 +52,7 @@ rank_starships <- function(interested = NULL) {
   # Sort DF by specified metric and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
-    head(15)
+    head(n)
 
   # Plot results
   starshipsPlot <-
