@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples \dontrun{rank_species(interested = "average_height"),
-#' rank_species(interested = "average_lifespan")} 
+#' rank_species(interested = "average_lifespan")}
 
 # Get information
 rank_species <- function(interested = NULL) {
@@ -36,30 +36,27 @@ rank_species <- function(interested = NULL) {
     resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  
-  # Tidy dataframe 
+
+  # Tidy dataframe
   # Trim to only 'name' and numeric columns
-  resDF <- 
+  resDF <-
     resDF[c(
-      'name', 
-      'average_height', 
+      'name',
+      'average_height',
       'average_lifespan'
     )]
   # Strip commas, change numeric values to numbers
-  resDF[, c(2:3)] <- suppressWarnings(sapply(resDF[, c(2:3)], function(x) as.numeric9gsub(",", "", x))))
+  resDF[, 2:3] <- suppressWarnings(sapply(resDF[, 2:3], function(x) as.numeric(gsub(",", "", x))))
   # Sort by specified metic and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(15)
 
-
   # Plot results
-  speciesPlot <- 
+  speciesPlot <-
     ggplot(resDF, aes(x=stats::reorder(name, -!!sym(interested)), y=!!sym(interested))) +
     geom_bar(stat="identity") +
     coord_flip() +
     xlab("Species")
   speciesPlot
-
 }
-

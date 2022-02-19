@@ -4,13 +4,20 @@
 \alias{rank_species}
 \title{Rank Species by specified metric}
 \usage{
-rank_species(format = NULL, interested)
+rank_species(interested = NULL)
+}
+\arguments{
+\item{interested}{Metric to rank species on. ("average_height", "average_lifespan")}
 }
 \value{
-
-
-
+A plot with species name on the y-axis and the ranking metric on the x-axis.
 }
 \description{
-Rank Species by specified metric
+Returns a plot showing the top 15 Star Wars species
+sorted by a specified metric with starship name on the y-axis,
+and the ranking metric on the x-axis.
+}
+\examples{
+\dontrun{rank_species(interested = "average_height"),
+rank_species(interested = "average_lifespan")}
 }
