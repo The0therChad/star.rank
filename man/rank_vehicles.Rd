@@ -4,11 +4,20 @@
 \alias{rank_vehicles}
 \title{Rank Vehicles by specified metric}
 \usage{
-rank_vehicles(format = NULL)
+rank_vehicles(interested = NULL)
+}
+\arguments{
+\item{interested}{Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")}
 }
 \value{
-
+A plot with vehicle name on the y-axis and the ranking metric on  the x-axis.
 }
 \description{
-Rank Vehicles by specified metric
+Returns a plot showing the top 15 Star Wars vehicles
+sorted by a specified metric with vehicle name on the y-axis,
+and the ranking metric on the x-axis.
+}
+\examples{
+\dontrun{rank_vehicles(interested = "length"),
+rank_vehicles(interested = "passengers")}
 }

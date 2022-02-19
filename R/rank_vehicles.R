@@ -1,34 +1,63 @@
 #' Rank Vehicles by specified metric
 #'
-#' @importFrom purrr compact
-#' @importFrom jsonlite fromJSON
-#' @importFrom httr GET
+#' Returns a plot showing the top 15 Star Wars vehicles
+#' sorted by a specified metric with vehicle name on the y-axis,
+#' and the ranking metric on the x-axis.
 #'
-#' @return
+#' @param interested Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")
+#'
+#' @import ggplot2
+#' @importFrom utils head
+#'
+#' @return A plot with vehicle name on the y-axis and the ranking metric on  the x-axis.
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{rank_vehicles(interested = "length"),
+#' rank_vehicles(interested = "passengers")}
 
-rank_vehicles <- function(format = NULL) {
+rank_vehicles <- function(interested = NULL) {
   url <- "https://swapi.dev/api/vehicles/"
-  args <- list(format = format)
   # Check for internet
   check_internet()
   # Call the API
-  res <- GET(url, query = compact(args))
+  res <- httr::GET(url)
   # Check the result
   check_status(res)
   # Store content of response
   cont <- httr::content(res, as = "text", encoding = "UTF-8")
   # Return content as a dataframe
-  resHead <- fromJSON(cont)
+  resHead <- jsonlite::fromJSON(cont)
   resDF <- resHead$results
   # Get each page of data and append to first page
   while (!is.null(resHead$`next`)) {
-    res <- GET(resHead$`next`, query = compact(args))
+    res <- httr::GET(resHead$`next`)
     cont <- httr::content(res, as = "text", encoding = "UTF-8")
-    resHead <- fromJSON(cont)
+    resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  resDF
+  # Only use 'name' and numeric columns
+  resDF <-
+    resDF[c(
+      'name',
+      'cost_in_credits',
+      'length',
+      'max_atmosphering_speed',
+      'crew',
+      'passengers',
+      'cargo_capacity'
+    )]
+  # Strip commas and change all values to numbers for plotting
+  resDF[, 2:7] <- suppressWarnings(sapply(resDF[, 2:7], function(x) as.numeric(gsub(",", "", x))))
+  # Sort DF by specified metric and use only top 15 values
+  resDF <- resDF %>%
+    dplyr::arrange(-!!sym(interested)) %>%
+    head(15)
+
+  # Plot results
+  vehiclesPlot <-
+    ggplot(resDF, aes(x = stats::reorder(name, -!!sym(interested)), y = !!sym(interested))) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    xlab("Vehicle")
+  vehiclesPlot
 }
