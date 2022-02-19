@@ -1,10 +1,11 @@
 #' Rank Species by specified metric
 #'
-#' Returns a plot showing the top 15 Star Wars species
+#' Returns a plot showing the top "n" number of Star Wars species
 #' sorted by a specified metric with starship name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
 #' @param interested Metric to rank species on. ("average_height", "average_lifespan")
+#' @param n Number of results to plot. (default = 15)
 #'
 #' @import ggplot2
 #' @importFrom utils head
@@ -16,7 +17,7 @@
 #' rank_species(interested = "average_lifespan")}
 
 # Get information
-rank_species <- function(interested = NULL) {
+rank_species <- function(interested = NULL, n = 15) {
   url <- "https://swapi.dev/api/species/"
   #check for internet
   check_internet()
@@ -50,7 +51,7 @@ rank_species <- function(interested = NULL) {
   # Sort by specified metic and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
-    head(15)
+    head(n)
 
   # Plot results
   speciesPlot <-

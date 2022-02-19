@@ -4,16 +4,18 @@
 \alias{rank_planets}
 \title{Rank Planets by quantitative metric (rotation_period, orbital_period, diameter, population)}
 \usage{
-rank_planets(interested)
+rank_planets(interested = NULL, n = 15)
 }
 \arguments{
 \item{interested}{Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population")}
+
+\item{n}{Number of results to plot. (default = 15)}
 }
 \value{
 A ggplot with planet name on  the y-axis and the ranking metric on the x-axis.
 }
 \description{
-Returns a plot showing the top 15 Star Wars planets
+Returns a plot showing the top "n" number of Star Wars planets
 sorted by a specified metric with planet name on the y-axis,
 and the ranking metric on the x-axis.
 }

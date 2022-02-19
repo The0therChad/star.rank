@@ -1,10 +1,11 @@
 #' Rank Peoples by specified metric
 #'
-#' Returns a plot showing the top 15 Star Wars people
+#' Returns a plot showing the top "n" number of Star Wars people
 #' sorted by a specified metric with the person's name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
 #' @param interested Metric to rank people on. ("height", "mass")
+#' @param n Number of results to plot. (default = 15)
 #'
 #' @import ggplot2
 #' @importFrom utils head
@@ -15,7 +16,7 @@
 #' @examples \dontrun{rank_people(interested = "height"),
 #' rank_people(interested = "mass")}
 
-rank_people <- function(interested = NULL) {
+rank_people <- function(interested = NULL, n = 15) {
   url <- "https://swapi.dev/api/people/"
   # Check for internet
   check_internet()
@@ -47,7 +48,7 @@ rank_people <- function(interested = NULL) {
   # Sort DF by specified metric and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
-    head(15)
+    head(n)
 
   # Plot results
   peoplePlot <-

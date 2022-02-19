@@ -4,16 +4,18 @@
 \alias{rank_species}
 \title{Rank Species by specified metric}
 \usage{
-rank_species(interested = NULL)
+rank_species(interested = NULL, n = 15)
 }
 \arguments{
 \item{interested}{Metric to rank species on. ("average_height", "average_lifespan")}
+
+\item{n}{Number of results to plot. (default = 15)}
 }
 \value{
 A plot with species name on the y-axis and the ranking metric on the x-axis.
 }
 \description{
-Returns a plot showing the top 15 Star Wars species
+Returns a plot showing the top "n" number of Star Wars species
 sorted by a specified metric with starship name on the y-axis,
 and the ranking metric on the x-axis.
 }

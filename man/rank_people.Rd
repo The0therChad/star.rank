@@ -4,16 +4,18 @@
 \alias{rank_people}
 \title{Rank Peoples by specified metric}
 \usage{
-rank_people(interested = NULL)
+rank_people(interested = NULL, n = 15)
 }
 \arguments{
 \item{interested}{Metric to rank people on. ("height", "mass")}
+
+\item{n}{Number of results to plot. (default = 15)}
 }
 \value{
 A plot with people name on the y-axis and the ranking metric on the x-axis.
 }
 \description{
-Returns a plot showing the top 15 Star Wars people
+Returns a plot showing the top "n" number of Star Wars people
 sorted by a specified metric with the person's name on the y-axis,
 and the ranking metric on the x-axis.
 }

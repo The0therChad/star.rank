@@ -4,16 +4,18 @@
 \alias{rank_starships}
 \title{Rank Starships by specified metric}
 \usage{
-rank_starships(interested = NULL)
+rank_starships(interested = NULL, n = 15)
 }
 \arguments{
 \item{interested}{Metric to rank starships on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")}
+
+\item{n}{Number of results to plot. (default = 15)}
 }
 \value{
 A plot with starship name on the y-axis and the ranking metric on  the x-axis.
 }
 \description{
-Returns a plot showing the top 15 Star Wars starships
+Returns a plot showing the top "n" number of Star Wars starships
 sorted by a specified metric with starship name on the y-axis,
 and the ranking metric on the x-axis.
 }
