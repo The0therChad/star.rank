@@ -1,6 +1,6 @@
 Package: star.rank
 Title: Plotting Wrapper for the SWAPI API
-Version: 1.0.0.0000
+Version: 0.1.0.0000
 Authors@R: c(
     person("Chad", "Wheeler", email = "callmewheelz@gmail.com", role = c("aut", "cre")),
     person("Monica", "Penner", email = "monicapenner7@gmail.com", role = c("aut")),
