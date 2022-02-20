@@ -1,5 +1,7 @@
 library("star.rank")
 
+
+# Test rank_vehicles function (args = (interested, n=optional))
 test_that("" , {
   expect_error(rank_vehicles(interested = "test"))
   expect_error(rank_vehicles(), "'interested' argument must be character string")

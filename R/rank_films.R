@@ -1,4 +1,4 @@
-#' Rank Species by specified metric
+#' Rank Films by specified metric
 #'
 #' Returns a plot showing all six Star Wars films
 #' sorted by the count of a specified metric with the film name on the y-axis,
@@ -9,7 +9,7 @@
 #' @import ggplot2
 #' @importFrom utils head
 #'
-#' @return A plot with film name on the y-axis and the ranking metric on the x-axis.
+#' @return A plot with film title on the y-axis and the ranking metric on the x-axis.
 #' @export
 #'
 #' @examples \dontrun{rank_films(interested = "species"),
@@ -40,7 +40,7 @@ rank_films <- function(interested = NULL) {
   }
 
   # Tidy dataframe
-  # Trim
+  # Trim for variables of interest
   resDF <-
     resDF[c(
       'title',
@@ -58,7 +58,7 @@ rank_films <- function(interested = NULL) {
   resDF[, 4] <- lengths(resDF$starships)
   resDF[, 5] <- lengths(resDF$vehicles)
   resDF[, 6] <- lengths(resDF$species)
-  # Sort by specified metric and use only top 15 values
+  # Sort by specified metric and use all 6 films
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(6)

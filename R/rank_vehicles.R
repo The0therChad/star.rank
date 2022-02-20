@@ -16,6 +16,7 @@
 #' @examples \dontrun{rank_vehicles(interested = "length"),
 #' rank_vehicles(interested = "passengers")}
 
+# Get information
 rank_vehicles <- function(interested = NULL, n = 15) {
   # Check for proper arguments
   if (typeof(interested) != "character") stop("'interested' argument must be character string")
@@ -39,7 +40,8 @@ rank_vehicles <- function(interested = NULL, n = 15) {
     resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  # Only use 'name' and numeric columns
+  # Tidy dataframe
+  # Select variables of interest
   resDF <-
     resDF[c(
       'name',
@@ -59,7 +61,7 @@ rank_vehicles <- function(interested = NULL, n = 15) {
   resDF[, 2:7] <- suppressWarnings(sapply(resDF[, 2:7], function(x) as.numeric(gsub(",", "", x))))
   # Count number of films
   resDF[, 8] <- lengths(resDF$films)
-  # Sort DF by specified metric and use only top 15 values
+  # Sort DF by specified metric and use only top "n" values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(n)

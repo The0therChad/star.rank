@@ -1,5 +1,6 @@
 library("star.rank")
 
+# Test rank_film function (args = interested)
 test_that("" , {
   expect_error(rank_films(interested = "test"))
   expect_error(rank_films(), "'interested' argument must be character string")

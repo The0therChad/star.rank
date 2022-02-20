@@ -1,5 +1,6 @@
 library("star.rank")
 
+# Test rank_planets function (args = (interested, n=optional))
 test_that("" , {
   expect_error(rank_planets(interested = "test"))
   expect_error(rank_planets(), "'interested' argument must be character string")
