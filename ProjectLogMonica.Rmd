@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Feb 16
 #### Feb 17 (backfilled)
 #### Feb 19
+#### Feb 20
 
 ### B) Communication Events
 
@@ -77,9 +78,11 @@ knitr::opts_chunk$set(echo = TRUE)
 - Final documentation edits https://github.com/The0therChad/star.rank/commit/46290c978a7a6ead57589cd2973001674c4aad32
 
 ### 8) February 20, 2022
-- Final edits
-- Release
-- 
+- Final edits (https://github.com/The0therChad/star.rank/commit/c60951b06ea57973a5df3a80b96032b298d0d942)
+- Release reading
+- README dependencies, installation and badge (https://github.com/The0therChad/star.rank/commit/3294784d5fd86f0fa455dc0fc1b128c4520845e6)
+
+
 ## B) Communication Events
 -Date - medium: (primary person) topic
 
@@ -95,9 +98,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - Feb 17 - classroom: function code creation, task division
 - Feb 17 - slack: code creation hiccups (evening)
 - Feb 18 - slack: multiple times re: dplyr pipe error
-- Feb 19 - slack : multiple times to coordinate next steps as each task completed
-- Feb 19 - classroom: (Chad, Monica, Roger excused)
- 
+- Feb 19 - slack: multiple times to coordinate next steps as each task completed
+- Feb 19 - classroom: (Chad, Monica, Roger excused): in person work session
+- Feb 20 - slack: finalizing last few tasks
+- Feb 20 - zoom: (Chad->Monica) Review of entire project process to solidify understanding of usethis, devtools, git workflow, test, CI, etc 
 
 
 ## C) Major Decision Points
@@ -107,5 +111,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - Feb 17: Use plot code developed by Roger
 - Feb 18: Use improved function code developed by Chad
 - Feb 19: Agree to proceed with films function development
+- Feb 20: Agree to release as soon as CI pass 
 
 
