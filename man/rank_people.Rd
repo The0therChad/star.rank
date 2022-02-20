@@ -21,5 +21,5 @@ and the ranking metric on the x-axis.
 }
 \examples{
 \dontrun{rank_people(interested = "height"),
-rank_people(interested = "mass")}
+rank_people(interested = "mass", n = 18)}
 }

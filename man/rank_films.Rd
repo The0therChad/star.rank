@@ -2,7 +2,7 @@
 % Please edit documentation in R/rank_films.R
 \name{rank_films}
 \alias{rank_films}
-\title{Rank Species by specified metric}
+\title{Rank Films by specified metric}
 \usage{
 rank_films(interested = NULL)
 }
@@ -10,7 +10,7 @@ rank_films(interested = NULL)
 \item{interested}{Metric to rank films on. ("characters", "planets", "starships", "vehicles", "species")}
 }
 \value{
-A plot with film name on the y-axis and the ranking metric on the x-axis.
+A plot with film title on the y-axis and the ranking metric on the x-axis.
 }
 \description{
 Returns a plot showing all six Star Wars films

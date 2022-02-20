@@ -20,6 +20,6 @@ sorted by a specified metric with starship name on the y-axis,
 and the ranking metric on the x-axis.
 }
 \examples{
-\dontrun{rank_species(interested = "average_height"),
+\dontrun{rank_species(interested = "average_height", n = 20),
 rank_species(interested = "average_lifespan")}
 }

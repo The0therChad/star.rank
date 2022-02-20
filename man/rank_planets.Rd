@@ -2,7 +2,7 @@
 % Please edit documentation in R/rank_planets.R
 \name{rank_planets}
 \alias{rank_planets}
-\title{Rank Planets by quantitative metric (rotation_period, orbital_period, diameter, population)}
+\title{Rank Planets by specified metric}
 \usage{
 rank_planets(interested = NULL, n = 15)
 }
@@ -20,6 +20,6 @@ sorted by a specified metric with planet name on the y-axis,
 and the ranking metric on the x-axis.
 }
 \examples{
-\dontrun{rank_planets(interested = "rotation_period"),
+\dontrun{rank_planets(interested = "rotation_period", n = 9),
 rank_planets(interested = "population")}
 }

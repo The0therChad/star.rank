@@ -12,7 +12,7 @@ rank_starships(interested = NULL, n = 15)
 \item{n}{Number of results to plot. (default = 15)}
 }
 \value{
-A plot with starship name on the y-axis and the ranking metric on  the x-axis.
+A plot with starship name on the y-axis and the ranking metric on the x-axis.
 }
 \description{
 Returns a plot showing the top "n" number of Star Wars starships
@@ -20,6 +20,6 @@ sorted by a specified metric with starship name on the y-axis,
 and the ranking metric on the x-axis.
 }
 \examples{
-\dontrun{rank_starships(interested = "crew"),
+\dontrun{rank_starships(interested = "crew", n = 5),
 rank_starships(interested = "max_atmosphering_speed")}
 }

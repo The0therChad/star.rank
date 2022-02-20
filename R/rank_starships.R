@@ -40,7 +40,7 @@ rank_starships <- function(interested = NULL, n = 15) {
     resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  
+
   #Tidy dataframe
   # Select variables of interest
   resDF <-

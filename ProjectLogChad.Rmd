@@ -43,3 +43,7 @@ https://github.com/The0therChad/star.rank/tree/70605b95eb1dac877b81c21e4b21a83a6
 Work on merging all functions to main, fixing up documentation. Added tests for all functions and argument checks within each function. Vignette written.
 Final commit of day - 
 https://github.com/The0therChad/star.rank/tree/cb4bf6e0d39acb611235ef8b9bf117d31703cfdb
+
+## Day 7 - Feb. 20
+
+Final work preparing for release. Finished logs.
