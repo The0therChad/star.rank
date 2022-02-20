@@ -29,6 +29,10 @@ Distributed under MIT license. See [license.md](https://github.com/The0therChad/
 - obsprof
 - TheOtherChad
 
+### Continuous Integration Badge
+The SWAPI website is unavailable at the time of release.<br>
+Please see Actions -> Workflow -> R-CDM-check for a complete CI log demonstrating passing integration milestones.<br>
+[![R-CMD-check](https://github.com/The0therChad/star.rank/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/The0therChad/star.rank/actions/workflows/check-standard.yaml)
 
 #### *Available Metrics (units)*
 #### People/Characters
@@ -73,10 +77,6 @@ Distributed under MIT license. See [license.md](https://github.com/The0therChad/
 - vehiicles(count)
 - species diversity(count)
 
-### Continuous Integration Badge
-The SWAPI website is unavailable at the time of release.<br>
-Please see Actions -> Workflow -> R-CDM-check for a complete CI log demonstrating passing integration milestones.<br>
-[![R-CMD-check](https://github.com/The0therChad/star.rank/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/The0therChad/star.rank/actions/workflows/check-standard.yaml)
 
 
 
