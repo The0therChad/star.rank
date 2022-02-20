@@ -13,7 +13,7 @@
 #' @return A plot with species name on the y-axis and the ranking metric on the x-axis.
 #' @export
 #'
-#' @examples \dontrun{rank_species(interested = "average_height"),
+#' @examples \dontrun{rank_species(interested = "average_height", n = 20),
 #' rank_species(interested = "average_lifespan")}
 
 # Get information
@@ -42,7 +42,7 @@ rank_species <- function(interested = NULL, n = 15) {
   }
 
   # Tidy dataframe
-  # Trim to only 'name' and numeric columns
+  # Select variables of interest
   resDF <-
     resDF[c(
       'name',
