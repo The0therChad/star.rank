@@ -40,4 +40,4 @@ https://github.com/The0therChad/star.rank/tree/70605b95eb1dac877b81c21e4b21a83a6
 
 ## Day 6 - Feb. 19
 
-Work on merging all functions to main, fixing up documentation.
+Work on merging all functions to main, fixing up documentation. Added tests for all functions and argument checks within each function.
