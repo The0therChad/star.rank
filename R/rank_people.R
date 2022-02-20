@@ -14,8 +14,9 @@
 #' @export
 #'
 #' @examples \dontrun{rank_people(interested = "height"),
-#' rank_people(interested = "mass")}
+#' rank_people(interested = "mass", n = 18)}
 
+# Get Information
 rank_people <- function(interested = NULL, n = 15) {
   # Check for proper arguments
   if (typeof(interested) != "character") stop("'interested' argument must be character string")
@@ -39,7 +40,9 @@ rank_people <- function(interested = NULL, n = 15) {
     resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  # Only use 'name' and numeric columns
+  
+  # Tidy dataframe
+  # Select variables of interest
   resDF <-
     resDF[c(
       'name',
@@ -55,7 +58,7 @@ rank_people <- function(interested = NULL, n = 15) {
   resDF[, 2:3] <- suppressWarnings(sapply(resDF[, 2:3], function(x) as.numeric(gsub(",", "", x))))
   # Count number of films
   resDF[, 4] <- lengths(resDF$films)
-  # Sort DF by specified metric and use only top 15 values
+  # Sort DF by specified metric and use top "n" values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(n)
