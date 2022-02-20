@@ -1,6 +1,6 @@
 ---
-title: "RoChMoCodeOfConduct"
-author: "Monica Penner"
+title: "StarRankCodeOfConduct"
+author: "TheOtherChad, obsprof, Energix11"
 date: "2/15/2022"
 output:
   pdf_document: default
