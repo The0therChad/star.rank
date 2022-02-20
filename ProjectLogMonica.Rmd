@@ -76,6 +76,10 @@ knitr::opts_chunk$set(echo = TRUE)
 - log updates https://github.com/The0therChad/star.rank/commit/7d09c92d8c18c3efddf704f6d88df8809245b8d8
 - Final documentation edits https://github.com/The0therChad/star.rank/commit/46290c978a7a6ead57589cd2973001674c4aad32
 
+### 8) February 20, 2022
+- Final edits
+- Release
+- 
 ## B) Communication Events
 -Date - medium: (primary person) topic
 
