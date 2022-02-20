@@ -17,9 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Feb 14 (backfilled)
 #### Feb 15
 #### Feb 16
-#### Feb 17
+#### Feb 17 (backfilled)
 #### Feb 19
-#### Feb 20
 
 ### B) Communication Events
 
@@ -52,9 +51,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### 5) February 15, 2022 
 - create personal project log https://github.com/The0therChad/star.rank/commit/ee91f8753ba0deebf979ffc8a04214c1ed2ce259
-- create Code of Conduct
+- create Code of Conduct https://github.com/The0therChad/star.rank/commit/ca80830d8cb209f19a350f5faeea1aa1d6d95c31
 - create CONTRIBUTIONS https://github.com/The0therChad/star.rank/commit/ca80830d8cb209f19a350f5faeea1aa1d6d95c31
-- create gannt contribution/timeline
+- create gannt contribution/timeline https://github.com/The0therChad/star.rank/blob/main/RancorGanntFeb15Edit.xlsx
 
 ### 5) February 16, 2022 
 - outline function options
@@ -70,10 +69,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### 8) February 19, 2022
 - review and pull Chad's work https://github.com/The0therChad/star.rank/commit/8b9389b7566397ed1af50f6f41c5ba8b1b043a8b
-- update species https://github.com/The0therChad/star.rank/commit/5de0542f8524523365d54a924eeed85da09707cd
-- start README edits
-- log update https://github.com/The0therChad/star.rank/commit/7d09c92d8c18c3efddf704f6d88df8809245b8d8
-
+- update species documentation https://github.com/The0therChad/star.rank/commit/5de0542f8524523365d54a924eeed85da09707cd
+- n feature and film counts to all functions https://github.com/The0therChad/star.rank/commit/481f1a022afc42da370c855a3e65961ff7267c17
+- create films function https://github.com/The0therChad/star.rank/commit/406570c3b4fdc55eb1f7b7c1c4c2f8d35d461f9f
+- README edits https://github.com/The0therChad/star.rank/commit/bfbf8c3cc3ee9277e64fce39e65045ac04fc9aac
+- log updates https://github.com/The0therChad/star.rank/commit/7d09c92d8c18c3efddf704f6d88df8809245b8d8
+- Final documentation edits https://github.com/The0therChad/star.rank/commit/46290c978a7a6ead57589cd2973001674c4aad32
 
 ## B) Communication Events
 -Date - medium: (primary person) topic
@@ -86,11 +87,13 @@ knitr::opts_chunk$set(echo = TRUE)
 - Feb 15 - classroom: (Chad) repo launch
 - Feb 15 - email: (Monica) API approval request to Dr Lucet
 - Feb 15 - zoom: discussion and decision to proceed with Star Wars API, decision to focus wrapper on Ranking (AKA Rancor), nightly task assignment: Roger function modification, Chad proj framework/folder completion, Monica Code of Conduct, Contributions documentation
-- Feb 16 -
-- Feb 17 -
-- Feb 18 - 
-- Feb 19 -
-- Feb 20 - 
+- Feb 16 - classroom: function code creation
+- Feb 17 - classroom: function code creation, task division
+- Feb 17 - slack: code creation hiccups (evening)
+- Feb 18 - slack: multiple times re: dplyr pipe error
+- Feb 19 - slack : multiple times to coordinate next steps as each task completed
+- Feb 19 - classroom: (Chad, Monica, Roger excused)
+ 
 
 
 ## C) Major Decision Points
@@ -99,6 +102,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - Feb 15: Continue with Star Wars API
 - Feb 17: Use plot code developed by Roger
 - Feb 18: Use improved function code developed by Chad
-- Feb 19: 
+- Feb 19: Agree to proceed with films function development
 
 
