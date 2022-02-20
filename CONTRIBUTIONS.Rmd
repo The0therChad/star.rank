@@ -14,28 +14,35 @@ output: html_document
 ### Roger's Strengths
 
 - Code creation driver
+- API selection driver
 - Equal creative contributor 
 
 ### Chad's Strengths
 
-- Software and technical expertice
+- Software expertice
+- Git branch management
+- Primary code contributor
 - Equal creative contributor
 
 
 ### Monica's Role
 
-- Documentation and Process flow
+- Supporting documentation driver 
+- Process flow mapper
 - Equal creative contributor
 
 ## Things that went well
 
-- excellent adherence to the RoChMo Code of Conduct
-- 
+- Excellent adherence to the Star.rank Code of Conduct
+- Multiple opportunities to work together in person, expedited work flow
 
 ## Challenges Encountered -> adjustments made
 
 - Delay in confirming API -> timeline re-adjusted and condensed (All)
 - Star Wars API wrapper already developed -> elevate and focus functionality of wrapper (All)
 - Jupyter lab /GitHub conflict -> switch to Rstudio (Chad)
-- expired Travis CI free trial -> switch to GitHub integration system (Chad)
+- Expired Travis CI free trial -> switch to GitHub integration system (Chad)
+- Incorrect branch creation technique -> consolidate branches (Chad)
+- Pipe %>% conflict (Monica) -> add pipe utility (Chad)
+- Rapid code creation and problem solving at end of project -> in person work sessions (Feb 17, 18, 19) to allow for direct/instantaneous communication (All)
 
