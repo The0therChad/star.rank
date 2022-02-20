@@ -7,7 +7,7 @@
 rank_vehicles(interested = NULL, n = 15)
 }
 \arguments{
-\item{interested}{Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")}
+\item{interested}{Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity", "films")}
 
 \item{n}{number of results to plot. (default = 15)}
 }

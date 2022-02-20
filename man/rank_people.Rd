@@ -7,7 +7,7 @@
 rank_people(interested = NULL, n = 15)
 }
 \arguments{
-\item{interested}{Metric to rank people on. ("height", "mass")}
+\item{interested}{Metric to rank people on. ("height", "mass", "films")}
 
 \item{n}{Number of results to plot. (default = 15)}
 }

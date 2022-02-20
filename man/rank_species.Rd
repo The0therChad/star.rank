@@ -7,7 +7,7 @@
 rank_species(interested = NULL, n = 15)
 }
 \arguments{
-\item{interested}{Metric to rank species on. ("average_height", "average_lifespan")}
+\item{interested}{Metric to rank species on. ("average_height", "average_lifespan", "films")}
 
 \item{n}{Number of results to plot. (default = 15)}
 }

@@ -7,7 +7,7 @@
 rank_planets(interested = NULL, n = 15)
 }
 \arguments{
-\item{interested}{Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population")}
+\item{interested}{Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population", "films")}
 
 \item{n}{Number of results to plot. (default = 15)}
 }

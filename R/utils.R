@@ -11,4 +11,6 @@ check_status <- function(res){
               msg = "The API returned an error")
 }
 
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
 utils::globalVariables(c("name", "%>%"))

@@ -7,7 +7,7 @@
 rank_starships(interested = NULL, n = 15)
 }
 \arguments{
-\item{interested}{Metric to rank starships on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")}
+\item{interested}{Metric to rank starships on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity", "films")}
 
 \item{n}{Number of results to plot. (default = 15)}
 }
