@@ -4,7 +4,7 @@
 #' sorted by a specified metric with starship name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
-#' @param interested Metric to rank species on. ("average_height", "average_lifespan")
+#' @param interested Metric to rank species on. ("average_height", "average_lifespan", "films")
 #' @param n Number of results to plot. (default = 15)
 #'
 #' @import ggplot2
@@ -44,11 +44,14 @@ rank_species <- function(interested = NULL, n = 15) {
     resDF[c(
       'name',
       'average_height',
-      'average_lifespan'
+      'average_lifespan',
+      'films'
     )]
   # Strip commas, change numeric values to numbers
   resDF[, 2:3] <- suppressWarnings(sapply(resDF[, 2:3], function(x) as.numeric(gsub(",", "", x))))
-  # Sort by specified metic and use only top 15 values
+  # Count number of films
+  resDF[, 4] <- lengths(resDF$films)
+  # Sort by specified metric and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(n)

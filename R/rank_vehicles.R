@@ -4,7 +4,7 @@
 #' sorted by a specified metric with vehicle name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
-#' @param interested Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity")
+#' @param interested Metric to rank vehicles on. ("cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity", "films")
 #' @param n number of results to plot. (default = 15)
 #'
 #' @import ggplot2
@@ -45,10 +45,13 @@ rank_vehicles <- function(interested = NULL, n = 15) {
       'max_atmosphering_speed',
       'crew',
       'passengers',
-      'cargo_capacity'
+      'cargo_capacity',
+      'films'
     )]
   # Strip commas and change all values to numbers for plotting
   resDF[, 2:7] <- suppressWarnings(sapply(resDF[, 2:7], function(x) as.numeric(gsub(",", "", x))))
+  # Count number of films
+  resDF[, 8] <- lengths(resDF$films)
   # Sort DF by specified metric and use only top 15 values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
