@@ -17,6 +17,9 @@
 #' rank_people(interested = "mass")}
 
 rank_people <- function(interested = NULL, n = 15) {
+  # Check for proper arguments
+  if (typeof(interested) != "character") stop("'interested' argument must be character string")
+  if (typeof(n) != "double") stop("'n' argument must be type double")
   url <- "https://swapi.dev/api/people/"
   # Check for internet
   check_internet()
@@ -44,6 +47,10 @@ rank_people <- function(interested = NULL, n = 15) {
       'mass',
       'films'
     )]
+  # Check for n within range of data
+  if (n > nrow(resDF)) stop(paste0("There are only ", nrow(resDF), " elements in the data. Please select a smaller 'n'"))
+  # Check for interested argument in data
+  if (interested %!in% colnames(resDF)) stop(paste0(interested, " is not a valid argument. Please check documentation for valid 'interested' values."))
   # Strip commas and change all values to numbers for plotting
   resDF[, 2:3] <- suppressWarnings(sapply(resDF[, 2:3], function(x) as.numeric(gsub(",", "", x))))
   # Count number of films

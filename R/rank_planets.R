@@ -17,6 +17,9 @@
 #' rank_planets(interested = "population")}
 
 rank_planets <- function(interested = NULL, n = 15) {
+  # Check for proper arguments
+  if (typeof(interested) != "character") stop("'interested' argument must be character string")
+  if (typeof(n) != "double") stop("'n' argument must be type double")
   url <- "https://swapi.dev/api/planets/"
   # Check for internet
   check_internet()
@@ -46,6 +49,10 @@ rank_planets <- function(interested = NULL, n = 15) {
             'population',
             'films'
             )]
+  # Check for n within range of data
+  if (n > nrow(resDF)) stop(paste0("There are only ", nrow(resDF), " elements in the data. Please select a smaller 'n'"))
+  # Check for interested argument in data
+  if (interested %!in% colnames(resDF)) stop(paste0(interested, " is not a valid argument. Please check documentation for valid 'interested' values."))
   resDF[, 2:5] <- suppressWarnings(sapply(resDF[, 2:5], function(x) as.numeric(gsub(",", "", x))))
   # Count number of films
   resDF[, 6] <- lengths(resDF$films)
