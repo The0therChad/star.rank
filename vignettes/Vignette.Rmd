@@ -1,0 +1,76 @@
+---
+title: "star.rank Package Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{star.rank Package Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(star.rank)
+library(ggplot2)
+```
+
+## Package Overview
+
+The star.rank package is intended to provide a simplified method to create plots from the data contained on the SWAPI API. The functions found in this package allow the user to specify which category of Star Wars elements they would like to explore, as well as which method they would like the results sorted by. For most functions there is also an argument to specify the number of records on the plot.
+
+### Function Demos
+
+The use of each function is very straightforward, simply requiring specification of which metric to rank the output on, and an optional argument for number of values on the returned plot.
+
+#### rank_films
+```{r}
+rank_films(interested = "vehicles")
+
+rank_films(interested = "starships")
+```
+
+#### rank_people
+```{r}
+rank_people(interested = "height")
+
+rank_people(interested = "height", n = 10)
+```
+
+```{r}
+rank_planets(interested = "diameter")
+
+rank_planets(interested = "population", n = 60)
+```
+
+```{r}
+rank_species(interested = "average_height")
+
+rank_species(interested = "average_height", n = 20)
+```
+
+```{r}
+rank_starships(interested = "crew")
+
+rank_starships(interested = "max_atmosphering_speed", n = 10)
+```
+
+```{r}
+rank_vehicles(interested = "passengers")
+
+rank_vehicles(interested = "cargo_capacity", n = 5)
+```
+
+It is even possible to add to the plots just as you would any ggplot.
+
+```{r}
+rank_vehicles(interested = "cargo_capacity", n = 5) +
+  labs(title = "Top 5 Star Wars Vehicles by Cargo Capacity")
+
+rank_people(interested = "mass") +
+  geom_bar(stat = "identity", fill = "purple")
+```

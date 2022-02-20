@@ -13,4 +13,4 @@ check_status <- function(res){
 
 '%!in%' <- function(x,y)!('%in%'(x,y))
 
-utils::globalVariables(c("name", "%>%"))
+utils::globalVariables(c("name", "title", "%>%"))

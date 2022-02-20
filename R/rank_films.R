@@ -17,6 +17,8 @@
 
 # Get information
 rank_films <- function(interested = NULL) {
+  # Check for proper arguments
+  if (typeof(interested) != "character") stop("'interested' argument must be character string")
   url <- "https://swapi.dev/api/films/"
   #check for internet
   check_internet()
@@ -48,6 +50,8 @@ rank_films <- function(interested = NULL) {
       'vehicles',
       'species'
     )]
+  # Check for interested argument in data
+  if (interested %!in% colnames(resDF)) stop(paste0(interested, " is not a valid argument. Please check documentation for valid 'interested' values."))
   # Count each metric
   resDF[, 2] <- lengths(resDF$characters)
   resDF[, 3] <- lengths(resDF$planets)
