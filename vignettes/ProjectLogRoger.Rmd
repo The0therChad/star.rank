@@ -1,0 +1,47 @@
+---
+title: "ProjectLogRoger.Rmd"
+author: "Roger Wheeler"
+date: "2/20/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Jan. 20
+
+Team meeting to discuss API project and identify preferences/strengths
+
+## Feb. 11
+
+Found potential API (swapi) and presented idea to team - idea accepted
+
+## Feb. 14
+
+Participated in workflow planning and sharing of responsibilities
+
+## Feb. 15
+
+Experimented with API get calls using python to familiarize myself with return (contents of json file)
+Began working on get call function in R - worked on resolving errors
+
+## Feb. 16
+
+Chad created successful API call - abandoned my R code in favour of his new code  
+Began work on three of the six enpoints (People, Species, Planets)
+
+## Feb. 17
+
+Created and pushed wrangling & visualization code for first endpoint (Planets) 
+
+## Feb. 18
+
+Created and pushed wrangling & visualization code for second (Species) and third (People) endpoints
+
+## Feb. 19
+
+Reviewed Chad's code for two endpoints (Starships & Vehicles) to support his merge request
+
+## Feb. 20
+
+Completed project log.
