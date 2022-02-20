@@ -3,12 +3,12 @@ Title: Plotting Wrapper for the SWAPI API
 Version: 1.0.0.0000
 Authors@R: c(
     person("Chad", "Wheeler", email = "callmewheelz@gmail.com", role = c("aut", "cre")),
-    person("Monica", "Penner", role = c("aut")),
+    person("Monica", "Penner", email = "monicapenner7@gmail.com", role = c("aut")),
     person("Roger", "Wheeler", role = c("aut")))
 Description: This package is a wrapper for the SWAPI API that 
   provides a selection of functions to pull data from the API,
   rank the items returned by some specified metric and return 
-  a basic ggplot object shoiwng a bar chart of the results.
+  a basic ggplot object showing a bar chart of the results.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
