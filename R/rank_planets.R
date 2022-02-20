@@ -4,7 +4,7 @@
 #' sorted by a specified metric with planet name on the y-axis,
 #' and the ranking metric on the x-axis.
 #'
-#' @param interested Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population")
+#' @param interested Metric to rank planets on. ("rotation_period", "orbital_period", "diameter", "population", "films")
 #' @param n Number of results to plot. (default = 15)
 #'
 #' @import ggplot2
@@ -43,8 +43,12 @@ rank_planets <- function(interested = NULL, n = 15) {
             'rotation_period',
             'orbital_period',
             'diameter',
-            'population')]
+            'population',
+            'films'
+            )]
   resDF[, 2:5] <- suppressWarnings(sapply(resDF[, 2:5], function(x) as.numeric(gsub(",", "", x))))
+  # Count number of films
+  resDF[, 6] <- lengths(resDF$films)
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(n)
