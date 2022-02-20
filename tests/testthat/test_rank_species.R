@@ -1,5 +1,7 @@
 library("star.rank")
 
+
+# Test rank_species function (args = (interested, n=optional))
 test_that("" , {
   expect_error(rank_species(interested = "average_weight"))
   expect_error(rank_species(), "'interested' argument must be character string")
