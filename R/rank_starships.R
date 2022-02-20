@@ -10,12 +10,13 @@
 #' @import ggplot2
 #' @importFrom utils head
 #'
-#' @return A plot with starship name on the y-axis and the ranking metric on  the x-axis.
+#' @return A plot with starship name on the y-axis and the ranking metric on the x-axis.
 #' @export
 #'
-#' @examples \dontrun{rank_starships(interested = "crew"),
+#' @examples \dontrun{rank_starships(interested = "crew", n = 5),
 #' rank_starships(interested = "max_atmosphering_speed")}
 
+# Get information
 rank_starships <- function(interested = NULL, n = 15) {
   # Check for proper arguments
   if (typeof(interested) != "character") stop("'interested' argument must be character string")
@@ -39,7 +40,9 @@ rank_starships <- function(interested = NULL, n = 15) {
     resHead <- jsonlite::fromJSON(cont)
     resDF <- rbind(resDF, resHead$results)
   }
-  # Only use 'name' and numeric columns
+  
+  #Tidy dataframe
+  # Select variables of interest
   resDF <-
     resDF[c(
       'name',
@@ -59,7 +62,7 @@ rank_starships <- function(interested = NULL, n = 15) {
   resDF[, 2:7] <- suppressWarnings(sapply(resDF[, 2:7], function(x) as.numeric(gsub(",", "", x))))
   # Count number of films
   resDF[, 8] <- lengths(resDF$films)
-  # Sort DF by specified metric and use only top 15 values
+  # Sort DF by specified metric and use only top "n" values
   resDF <- resDF %>%
     dplyr::arrange(-!!sym(interested)) %>%
     head(n)
