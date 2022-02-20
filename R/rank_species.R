@@ -18,6 +18,9 @@
 
 # Get information
 rank_species <- function(interested = NULL, n = 15) {
+  # Check for proper arguments
+  if (typeof(interested) != "character") stop("'interested' argument must be character string")
+  if (typeof(n) != "double") stop("'n' argument must be type double")
   url <- "https://swapi.dev/api/species/"
   #check for internet
   check_internet()
