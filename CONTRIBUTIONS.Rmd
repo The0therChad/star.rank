@@ -44,4 +44,4 @@ output: html_document
 - Incorrect branch creation technique -> consolidate branches (Chad)
 - Pipe %>% conflict (Monica) -> add pipe utility (Chad)
 - Rapid code creation and problem solving at end of project -> in person work sessions (Feb 17, 18, 19) to allow for direct/instantaneous communication (All)
-
+- SWAPI website became unaccessible February 19th -> attach note to failing CI badge
