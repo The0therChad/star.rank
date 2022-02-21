@@ -11,6 +11,7 @@ To access the development version
 library(devtools)
 install_github("The0therChad/star.rank")
 ```
+Please note that zero is the first character in the word "Other"
 [Link to the latest release zip file](https://github.com/The0therChad/star.rank/releases/tag/v0.1.0)
 
 ### Dependencies
