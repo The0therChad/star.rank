@@ -11,7 +11,7 @@ To access the development version
 library(devtools)
 install_github("TheOtherChad/star.wrap")
 ```
-
+Please note that zero is the first character in the word "Other"
 ### Dependencies
   - [attempt](https://cran.r-project.org/web/packages/attempt/index.html)
   - [curl](https://cran.r-project.org/web/packages/curl/index.html)
