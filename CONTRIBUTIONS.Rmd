@@ -24,7 +24,7 @@ output: html_document
 - Primary code contributor
 - Equal creative contributor
 
-### Monica's Role
+### Monica's Strengths
 
 - Supporting documentation driver 
 - Process flow mapper
